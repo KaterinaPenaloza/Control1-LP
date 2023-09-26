@@ -8,6 +8,7 @@ APAGAR=7
 MOVER=8
 DIBUJAR=9
 WS=10
+NEWLINE=11
 '('=1
 ','=2
 ')'=3

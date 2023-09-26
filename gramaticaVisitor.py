@@ -1,7 +1,7 @@
 # Generated from c:\\Users\\Kzwy\\Desktop\\Control1-LP\\gramatica.g4 by ANTLR 4.9.2
 from antlr4 import *
 import turtle
-from turtle import *
+from turtle import*
 if __name__ is not None and "." in __name__:
     from .gramaticaParser import gramaticaParser
 else:
@@ -16,10 +16,21 @@ class gramaticaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by gramaticaParser#printStat.
+    def visitPrintStat(self, ctx:gramaticaParser.PrintStatContext):
+        value = self.visit(ctx.stat())
+        print(value)
+        return 0
+
+
+    # Visit a parse tree produced by gramaticaParser#blank.
+    def visitBlank(self, ctx:gramaticaParser.BlankContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by gramaticaParser#On.
     def visitOn(self, ctx:gramaticaParser.OnContext):
         print("Hola mundo")
-        
         skk = turtle.Turtle()
         for i in range(4):
             skk.forward(50)
@@ -31,7 +42,7 @@ class gramaticaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by gramaticaParser#Off.
     def visitOff(self, ctx:gramaticaParser.OffContext):
-        print(1+1)
+        print("chao mundo")
         setup(450, 150, 0, 0)
         screensize(300, 150)
 

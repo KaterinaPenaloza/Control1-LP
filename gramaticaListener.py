@@ -17,6 +17,24 @@ class gramaticaListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by gramaticaParser#printStat.
+    def enterPrintStat(self, ctx:gramaticaParser.PrintStatContext):
+        pass
+
+    # Exit a parse tree produced by gramaticaParser#printStat.
+    def exitPrintStat(self, ctx:gramaticaParser.PrintStatContext):
+        pass
+
+
+    # Enter a parse tree produced by gramaticaParser#blank.
+    def enterBlank(self, ctx:gramaticaParser.BlankContext):
+        pass
+
+    # Exit a parse tree produced by gramaticaParser#blank.
+    def exitBlank(self, ctx:gramaticaParser.BlankContext):
+        pass
+
+
     # Enter a parse tree produced by gramaticaParser#On.
     def enterOn(self, ctx:gramaticaParser.OnContext):
         pass

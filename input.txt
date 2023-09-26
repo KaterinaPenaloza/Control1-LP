@@ -1,0 +1,3 @@
+encender
+apagar
+encender;

@@ -11,19 +11,21 @@ else:
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\f")
-        buf.write("!\4\2\t\2\4\3\t\3\3\2\6\2\b\n\2\r\2\16\2\t\3\3\3\3\3\3")
-        buf.write("\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3\3")
-        buf.write("\3\3\3\3\3\5\3\37\n\3\3\3\2\2\4\2\4\2\2\2#\2\7\3\2\2\2")
-        buf.write("\4\36\3\2\2\2\6\b\5\4\3\2\7\6\3\2\2\2\b\t\3\2\2\2\t\7")
-        buf.write("\3\2\2\2\t\n\3\2\2\2\n\3\3\2\2\2\13\f\7\b\2\2\f\37\5\4")
-        buf.write("\3\2\r\16\7\t\2\2\16\37\5\4\3\2\17\20\7\n\2\2\20\21\7")
-        buf.write("\3\2\2\21\22\7\7\2\2\22\23\7\4\2\2\23\24\7\7\2\2\24\25")
-        buf.write("\7\5\2\2\25\37\7\6\2\2\26\27\7\13\2\2\27\30\7\3\2\2\30")
-        buf.write("\31\7\7\2\2\31\32\7\4\2\2\32\33\7\7\2\2\33\34\7\5\2\2")
-        buf.write("\34\37\7\6\2\2\35\37\7\6\2\2\36\13\3\2\2\2\36\r\3\2\2")
-        buf.write("\2\36\17\3\2\2\2\36\26\3\2\2\2\36\35\3\2\2\2\37\5\3\2")
-        buf.write("\2\2\4\t\36")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\r")
+        buf.write(")\4\2\t\2\4\3\t\3\4\4\t\4\3\2\6\2\n\n\2\r\2\16\2\13\3")
+        buf.write("\3\3\3\3\3\3\3\5\3\22\n\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4")
+        buf.write("\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4\'")
+        buf.write("\n\4\3\4\2\2\5\2\4\6\2\2\2+\2\t\3\2\2\2\4\21\3\2\2\2\6")
+        buf.write("&\3\2\2\2\b\n\5\4\3\2\t\b\3\2\2\2\n\13\3\2\2\2\13\t\3")
+        buf.write("\2\2\2\13\f\3\2\2\2\f\3\3\2\2\2\r\16\5\6\4\2\16\17\7\r")
+        buf.write("\2\2\17\22\3\2\2\2\20\22\7\r\2\2\21\r\3\2\2\2\21\20\3")
+        buf.write("\2\2\2\22\5\3\2\2\2\23\24\7\b\2\2\24\'\5\6\4\2\25\26\7")
+        buf.write("\t\2\2\26\'\5\6\4\2\27\30\7\n\2\2\30\31\7\3\2\2\31\32")
+        buf.write("\7\7\2\2\32\33\7\4\2\2\33\34\7\7\2\2\34\35\7\5\2\2\35")
+        buf.write("\'\7\6\2\2\36\37\7\13\2\2\37 \7\3\2\2 !\7\7\2\2!\"\7\4")
+        buf.write("\2\2\"#\7\7\2\2#$\7\5\2\2$\'\7\6\2\2%\'\7\6\2\2&\23\3")
+        buf.write("\2\2\2&\25\3\2\2\2&\27\3\2\2\2&\36\3\2\2\2&%\3\2\2\2\'")
+        buf.write("\7\3\2\2\2\5\13\21&")
         return buf.getvalue()
 
 
@@ -42,12 +44,13 @@ class gramaticaParser ( Parser ):
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "NUMBER", "ENCENDER", "APAGAR", "MOVER", 
-                      "DIBUJAR", "WS" ]
+                      "DIBUJAR", "WS", "NEWLINE" ]
 
     RULE_prog = 0
-    RULE_stat = 1
+    RULE_iniciar = 1
+    RULE_stat = 2
 
-    ruleNames =  [ "prog", "stat" ]
+    ruleNames =  [ "prog", "iniciar", "stat" ]
 
     EOF = Token.EOF
     T__0=1
@@ -60,6 +63,7 @@ class gramaticaParser ( Parser ):
     MOVER=8
     DIBUJAR=9
     WS=10
+    NEWLINE=11
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -77,11 +81,11 @@ class gramaticaParser ( Parser ):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def stat(self, i:int=None):
+        def iniciar(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(gramaticaParser.StatContext)
+                return self.getTypedRuleContexts(gramaticaParser.IniciarContext)
             else:
-                return self.getTypedRuleContext(gramaticaParser.StatContext,i)
+                return self.getTypedRuleContext(gramaticaParser.IniciarContext,i)
 
 
         def getRuleIndex(self):
@@ -111,17 +115,120 @@ class gramaticaParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 5 
+            self.state = 7 
             self._errHandler.sync(self)
             _la = self._input.LA(1)
             while True:
-                self.state = 4
-                self.stat()
-                self.state = 7 
+                self.state = 6
+                self.iniciar()
+                self.state = 9 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << gramaticaParser.T__3) | (1 << gramaticaParser.ENCENDER) | (1 << gramaticaParser.APAGAR) | (1 << gramaticaParser.MOVER) | (1 << gramaticaParser.DIBUJAR))) != 0)):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << gramaticaParser.T__3) | (1 << gramaticaParser.ENCENDER) | (1 << gramaticaParser.APAGAR) | (1 << gramaticaParser.MOVER) | (1 << gramaticaParser.DIBUJAR) | (1 << gramaticaParser.NEWLINE))) != 0)):
                     break
+
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class IniciarContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+
+        def getRuleIndex(self):
+            return gramaticaParser.RULE_iniciar
+
+     
+        def copyFrom(self, ctx:ParserRuleContext):
+            super().copyFrom(ctx)
+
+
+
+    class BlankContext(IniciarContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a gramaticaParser.IniciarContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def NEWLINE(self):
+            return self.getToken(gramaticaParser.NEWLINE, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterBlank" ):
+                listener.enterBlank(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitBlank" ):
+                listener.exitBlank(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitBlank" ):
+                return visitor.visitBlank(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+    class PrintStatContext(IniciarContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a gramaticaParser.IniciarContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def stat(self):
+            return self.getTypedRuleContext(gramaticaParser.StatContext,0)
+
+        def NEWLINE(self):
+            return self.getToken(gramaticaParser.NEWLINE, 0)
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterPrintStat" ):
+                listener.enterPrintStat(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitPrintStat" ):
+                listener.exitPrintStat(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPrintStat" ):
+                return visitor.visitPrintStat(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+    def iniciar(self):
+
+        localctx = gramaticaParser.IniciarContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 2, self.RULE_iniciar)
+        try:
+            self.state = 15
+            self._errHandler.sync(self)
+            token = self._input.LA(1)
+            if token in [gramaticaParser.T__3, gramaticaParser.ENCENDER, gramaticaParser.APAGAR, gramaticaParser.MOVER, gramaticaParser.DIBUJAR]:
+                localctx = gramaticaParser.PrintStatContext(self, localctx)
+                self.enterOuterAlt(localctx, 1)
+                self.state = 11
+                self.stat()
+                self.state = 12
+                self.match(gramaticaParser.NEWLINE)
+                pass
+            elif token in [gramaticaParser.NEWLINE]:
+                localctx = gramaticaParser.BlankContext(self, localctx)
+                self.enterOuterAlt(localctx, 2)
+                self.state = 14
+                self.match(gramaticaParser.NEWLINE)
+                pass
+            else:
+                raise NoViableAltException(self)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -287,67 +394,67 @@ class gramaticaParser ( Parser ):
     def stat(self):
 
         localctx = gramaticaParser.StatContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 2, self.RULE_stat)
+        self.enterRule(localctx, 4, self.RULE_stat)
         try:
-            self.state = 28
+            self.state = 36
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [gramaticaParser.ENCENDER]:
                 localctx = gramaticaParser.OnContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
-                self.state = 9
+                self.state = 17
                 self.match(gramaticaParser.ENCENDER)
-                self.state = 10
+                self.state = 18
                 self.stat()
                 pass
             elif token in [gramaticaParser.APAGAR]:
                 localctx = gramaticaParser.OffContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
-                self.state = 11
+                self.state = 19
                 self.match(gramaticaParser.APAGAR)
-                self.state = 12
+                self.state = 20
                 self.stat()
                 pass
             elif token in [gramaticaParser.MOVER]:
                 localctx = gramaticaParser.MovContext(self, localctx)
                 self.enterOuterAlt(localctx, 3)
-                self.state = 13
+                self.state = 21
                 self.match(gramaticaParser.MOVER)
-                self.state = 14
+                self.state = 22
                 self.match(gramaticaParser.T__0)
-                self.state = 15
+                self.state = 23
                 self.match(gramaticaParser.NUMBER)
-                self.state = 16
+                self.state = 24
                 self.match(gramaticaParser.T__1)
-                self.state = 17
+                self.state = 25
                 self.match(gramaticaParser.NUMBER)
-                self.state = 18
+                self.state = 26
                 self.match(gramaticaParser.T__2)
-                self.state = 19
+                self.state = 27
                 self.match(gramaticaParser.T__3)
                 pass
             elif token in [gramaticaParser.DIBUJAR]:
                 localctx = gramaticaParser.DibContext(self, localctx)
                 self.enterOuterAlt(localctx, 4)
-                self.state = 20
+                self.state = 28
                 self.match(gramaticaParser.DIBUJAR)
-                self.state = 21
+                self.state = 29
                 self.match(gramaticaParser.T__0)
-                self.state = 22
+                self.state = 30
                 self.match(gramaticaParser.NUMBER)
-                self.state = 23
+                self.state = 31
                 self.match(gramaticaParser.T__1)
-                self.state = 24
+                self.state = 32
                 self.match(gramaticaParser.NUMBER)
-                self.state = 25
+                self.state = 33
                 self.match(gramaticaParser.T__2)
-                self.state = 26
+                self.state = 34
                 self.match(gramaticaParser.T__3)
                 pass
             elif token in [gramaticaParser.T__3]:
                 localctx = gramaticaParser.FinContext(self, localctx)
                 self.enterOuterAlt(localctx, 5)
-                self.state = 27
+                self.state = 35
                 self.match(gramaticaParser.T__3)
                 pass
             else:

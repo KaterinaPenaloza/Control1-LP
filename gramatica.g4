@@ -1,6 +1,10 @@
 grammar gramatica;
 
-prog:   stat+ ;
+prog    :   iniciar+ ;
+
+iniciar : stat NEWLINE                # printStat
+        | NEWLINE                     # blank
+        ;
 
 stat    : ENCENDER stat # On
         | APAGAR  stat # Off
@@ -20,3 +24,5 @@ MOVER : 'mover';
 DIBUJAR : 'dibujar';
 
 WS : [ \t\r\n]+->skip;
+
+NEWLINE:'\r'? '\n' ;     // return newlines to parser (is end-statement signal)
