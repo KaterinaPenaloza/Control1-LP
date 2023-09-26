@@ -1,4 +1,4 @@
-# Generated from c:\\Users\\miap7\\Documents\\GitHub\\Control1-LP\\gramatica.g4 by ANTLR 4.9.2
+# Generated from c:\\Users\\Kzwy\\Desktop\\Control1-LP\\gramatica.g4 by ANTLR 4.9.2
 from antlr4 import *
 from io import StringIO
 import sys
@@ -24,8 +24,8 @@ def serializedATN():
         buf.write("\3\2\2\2\2\23\3\2\2\2\2\25\3\2\2\2\3\27\3\2\2\2\5\31\3")
         buf.write("\2\2\2\7\33\3\2\2\2\t\35\3\2\2\2\13 \3\2\2\2\r$\3\2\2")
         buf.write("\2\17-\3\2\2\2\21\64\3\2\2\2\23:\3\2\2\2\25C\3\2\2\2\27")
-        buf.write("\30\7=\2\2\30\4\3\2\2\2\31\32\7*\2\2\32\6\3\2\2\2\33\34")
-        buf.write("\7.\2\2\34\b\3\2\2\2\35\36\7+\2\2\36\n\3\2\2\2\37!\t\2")
+        buf.write("\30\7*\2\2\30\4\3\2\2\2\31\32\7.\2\2\32\6\3\2\2\2\33\34")
+        buf.write("\7+\2\2\34\b\3\2\2\2\35\36\7=\2\2\36\n\3\2\2\2\37!\t\2")
         buf.write("\2\2 \37\3\2\2\2!\"\3\2\2\2\" \3\2\2\2\"#\3\2\2\2#\f\3")
         buf.write("\2\2\2$%\7g\2\2%&\7p\2\2&\'\7e\2\2\'(\7g\2\2()\7p\2\2")
         buf.write(")*\7f\2\2*+\7g\2\2+,\7t\2\2,\16\3\2\2\2-.\7c\2\2./\7r")
@@ -60,7 +60,7 @@ class gramaticaLexer(Lexer):
     modeNames = [ "DEFAULT_MODE" ]
 
     literalNames = [ "<INVALID>",
-            "';'", "'('", "','", "')'", "'encender'", "'apagar'", "'mover'", 
+            "'('", "','", "')'", "';'", "'encender'", "'apagar'", "'mover'", 
             "'dibujar'" ]
 
     symbolicNames = [ "<INVALID>",

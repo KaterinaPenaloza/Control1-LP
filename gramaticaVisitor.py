@@ -1,8 +1,7 @@
-# Generated from c:\\Users\\miap7\\Documents\\GitHub\\Control1-LP\\gramatica.g4 by ANTLR 4.9.2
+# Generated from c:\\Users\\Kzwy\\Desktop\\Control1-LP\\gramatica.g4 by ANTLR 4.9.2
 from antlr4 import *
 import turtle
-from turtle import*
-
+from turtle import *
 if __name__ is not None and "." in __name__:
     from .gramaticaParser import gramaticaParser
 else:
@@ -40,6 +39,7 @@ class gramaticaVisitor(ParseTreeVisitor):
 
         exitonclick()
         return self.visitChildren(ctx)
+
 
     # Visit a parse tree produced by gramaticaParser#Mov.
     def visitMov(self, ctx:gramaticaParser.MovContext):

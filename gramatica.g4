@@ -2,8 +2,8 @@ grammar gramatica;
 
 prog:   stat+ ;
 
-stat    : ENCENDER ';' # On
-        | APAGAR ';' # Off
+stat    : ENCENDER stat # On
+        | APAGAR  stat # Off
         | MOVER '(' NUMBER ',' NUMBER ')' ';' # Mov
         | DIBUJAR '(' NUMBER ',' NUMBER ')' ';' # Dib
         | ';' #fin
