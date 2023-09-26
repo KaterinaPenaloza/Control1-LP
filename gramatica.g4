@@ -6,6 +6,7 @@ stat    : ENCENDER ';' # On
         | APAGAR ';' # Off
         | MOVER '(' NUMBER ',' NUMBER ')' ';' # Mov
         | DIBUJAR '(' NUMBER ',' NUMBER ')' ';' # Dib
+        | ';' #fin
         ;
 
 NUMBER : [0-9]+;
