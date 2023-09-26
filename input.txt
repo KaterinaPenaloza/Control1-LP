@@ -1,3 +1,2 @@
 encender
-apagar
-encender;
+apagar;
