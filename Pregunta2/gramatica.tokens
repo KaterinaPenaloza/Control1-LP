@@ -1,0 +1,11 @@
+T__0=1
+NUMBER=2
+ENCENDER=3
+APAGAR=4
+DIBUJAR=5
+WS=6
+NEWLINE=7
+';'=1
+'encender'=3
+'apagar'=4
+'dibujar'=5
