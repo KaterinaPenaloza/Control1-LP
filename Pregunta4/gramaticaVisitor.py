@@ -93,16 +93,15 @@ class gramaticaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
     
         
-    # Visit a parse tree produced by gramaticaParser#Rep.
     def visitRep(self, ctx:gramaticaParser.RepContext):
-        num = int(ctx.NUMBER().getText())
-        stat = int(ctx.NUMBER().getText())
-        print(num)
-        print(stat)
-        #right = int(stat(ctx.expr(1)))
-        #if ctx.op.type == gramaticaParser.MULTIPLICAR:
-            #return right * num
-        return self.visitChildren(ctx)
+        num = int(ctx.NUMBER().getText())  # Obtener el número de repeticiones
+        stat = ctx.stat(0)  # Obtener la sentencia a repetir
+        
+        for _ in range(num):
+            self.visit(stat)  # Visitar la sentencia la cantidad especificada de veces
+        
+        return None  # No es necesario devolver un valor
+
 
 
     # Visit a parse tree produced by gramaticaParser#fin.
