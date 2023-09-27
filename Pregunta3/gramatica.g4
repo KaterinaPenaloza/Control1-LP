@@ -14,7 +14,7 @@ stat    : ENCENDER stat # On
         | ';' # fin
         ;
 
-NUMBER : [0-9]+;
+NUMBER : ('-'? [0-9]+);
 
 ENCENDER : 'encender';
 

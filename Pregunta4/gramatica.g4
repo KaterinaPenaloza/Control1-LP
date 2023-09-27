@@ -11,13 +11,13 @@ stat    : ENCENDER stat # On
         | ROTAR '(' NUMBER ')' stat # Rot | ROTAR '(' NUMBER ',' NUMBER ')'  stat # Rot2
         | MOVER '(' NUMBER ')' stat # Mov | MOVER '(' NUMBER ',' NUMBER ')'  stat # Mov2
         | ROTAR '(' MOVER '(' NUMBER ',' NUMBER ')' '+' NUMBER ')' stat # Rot3
-        | REPETIR '(' stat '*' NUMBER ')' stat NEWLINE # Rep
+        | REPETIR '(' stat '*' NUMBER ')' stat # Rep
         //| REPETIR '(' stat MULTIPLICAR NUMBER')' stat # Rep
         | ';' # fin
         ;
         
 
-NUMBER : [0-9]+;
+NUMBER : ('-'? [0-9]+);
 
 ENCENDER : 'encender';
 

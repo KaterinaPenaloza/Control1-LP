@@ -1,4 +1,4 @@
-# Generated from c:\\Users\\miap7\\Documents\\GitHub\\Control1-LP\\Pregunta2\\gramatica.g4 by ANTLR 4.9.2
+# Generated from c:\\Users\\miap7\\Documents\\GitHub\\Control1-LP\\Pregunta4\\gramatica.g4 by ANTLR 4.9.2
 from antlr4 import *
 import turtle
 from turtle import*
@@ -14,6 +14,9 @@ class gramaticaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by gramaticaParser#prog.
     def visitProg(self, ctx:gramaticaParser.ProgContext):
+        turtle.showturtle()
+        turtle.shape("turtle")
+
         return self.visitChildren(ctx)
 
 
@@ -29,8 +32,6 @@ class gramaticaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by gramaticaParser#On.
     def visitOn(self, ctx:gramaticaParser.OnContext):
-        turtle.showturtle()
-        turtle.shape("turtle")
         turtle.down()
 
         return self.visitChildren(ctx)
@@ -97,15 +98,18 @@ class gramaticaVisitor(ParseTreeVisitor):
         num = int(ctx.NUMBER().getText())  # Obtener el número de repeticiones
         stat = ctx.stat(0)  # Obtener la sentencia a repetir
         
-        for _ in range(num):
+        for _ in range(num-1):
             self.visit(stat)  # Visitar la sentencia la cantidad especificada de veces
+        #turtle.time.sleep(5)
         
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by gramaticaParser#fin.
     def visitFin(self, ctx:gramaticaParser.FinContext):
+        turtle.time.sleep(5)
         turtle.done()
+        turtle.time.sleep(10)
         return self.visitChildren(ctx)
 
 

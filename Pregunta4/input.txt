@@ -1,3 +1,4 @@
-encender
-repetir(rotar(45) * 3)
+encender 
+repetir(rotar(90) * 3) 
+mover(20)
 apagar;
