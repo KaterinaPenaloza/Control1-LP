@@ -30,27 +30,27 @@ class gramaticaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by gramaticaParser#On.
     def visitOn(self, ctx:gramaticaParser.OnContext):
-        print("Hola mundo")
         turtle.showturtle()
         turtle.shape("turtle")
-        turtle.forward(100)
+        turtle.down()
+
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by gramaticaParser#Off.
     def visitOff(self, ctx:gramaticaParser.OffContext):
-        print("chao mundo")
-        turtle.right(90)
-        return self.visitChildren(ctx)
 
-
-    # Visit a parse tree produced by gramaticaParser#Mov.
-    def visitMov(self, ctx:gramaticaParser.MovContext):
+        turtle.up()
+        #turtle.done()
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by gramaticaParser#Dib.
     def visitDib(self, ctx:gramaticaParser.DibContext):
+        
+        turtle.goto(100,50)
+        #turtle.forward(100)
+
         return self.visitChildren(ctx)
 
 

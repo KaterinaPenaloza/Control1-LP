@@ -8,9 +8,8 @@ iniciar : stat NEWLINE                # printStat
 
 stat    : ENCENDER stat # On
         | APAGAR  stat # Off
-        | MOVER '(' NUMBER ',' NUMBER ')' ';' # Mov
-        | DIBUJAR '(' NUMBER ',' NUMBER ')' ';' # Dib
-        | ';' #fin
+        | DIBUJAR stat # Dib
+        | ';' # fin
         ;
 
 NUMBER : [0-9]+;
@@ -18,8 +17,6 @@ NUMBER : [0-9]+;
 ENCENDER : 'encender';
 
 APAGAR : 'apagar';
-
-MOVER : 'mover';
 
 DIBUJAR : 'dibujar';
 
