@@ -11,29 +11,30 @@ else:
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\17")
-        buf.write("E\4\2\t\2\4\3\t\3\4\4\t\4\3\2\6\2\n\n\2\r\2\16\2\13\3")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\20")
+        buf.write("G\4\2\t\2\4\3\t\3\4\4\t\4\3\2\6\2\n\n\2\r\2\16\2\13\3")
         buf.write("\3\3\3\3\3\3\3\5\3\22\n\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4")
         buf.write("\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3")
         buf.write("\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4")
-        buf.write("\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5")
-        buf.write("\4C\n\4\3\4\2\2\5\2\4\6\2\2\2K\2\t\3\2\2\2\4\21\3\2\2")
-        buf.write("\2\6B\3\2\2\2\b\n\5\4\3\2\t\b\3\2\2\2\n\13\3\2\2\2\13")
-        buf.write("\t\3\2\2\2\13\f\3\2\2\2\f\3\3\2\2\2\r\16\5\6\4\2\16\17")
-        buf.write("\7\17\2\2\17\22\3\2\2\2\20\22\7\17\2\2\21\r\3\2\2\2\21")
-        buf.write("\20\3\2\2\2\22\5\3\2\2\2\23\24\7\t\2\2\24C\5\6\4\2\25")
-        buf.write("\26\7\n\2\2\26C\5\6\4\2\27\30\7\13\2\2\30\31\7\3\2\2\31")
-        buf.write("\32\7\b\2\2\32\33\7\4\2\2\33C\5\6\4\2\34\35\7\13\2\2\35")
-        buf.write("\36\7\3\2\2\36\37\7\b\2\2\37 \7\5\2\2 !\7\b\2\2!\"\7\4")
-        buf.write("\2\2\"C\5\6\4\2#$\7\f\2\2$%\7\3\2\2%&\7\b\2\2&\'\7\4\2")
-        buf.write("\2\'C\5\6\4\2()\7\f\2\2)*\7\3\2\2*+\7\b\2\2+,\7\5\2\2")
-        buf.write(",-\7\b\2\2-.\7\4\2\2.C\5\6\4\2/\60\7\13\2\2\60\61\7\3")
-        buf.write("\2\2\61\62\7\f\2\2\62\63\7\3\2\2\63\64\7\b\2\2\64\65\7")
-        buf.write("\5\2\2\65\66\7\b\2\2\66\67\7\4\2\2\678\7\6\2\289\7\b\2")
-        buf.write("\29:\7\4\2\2:C\5\6\4\2;<\7\r\2\2<=\7\3\2\2=>\5\6\4\2>")
-        buf.write("?\7\4\2\2?@\5\6\4\2@C\3\2\2\2AC\7\7\2\2B\23\3\2\2\2B\25")
-        buf.write("\3\2\2\2B\27\3\2\2\2B\34\3\2\2\2B#\3\2\2\2B(\3\2\2\2B")
-        buf.write("/\3\2\2\2B;\3\2\2\2BA\3\2\2\2C\7\3\2\2\2\5\13\21B")
+        buf.write("\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3")
+        buf.write("\4\3\4\5\4E\n\4\3\4\2\2\5\2\4\6\2\2\2M\2\t\3\2\2\2\4\21")
+        buf.write("\3\2\2\2\6D\3\2\2\2\b\n\5\4\3\2\t\b\3\2\2\2\n\13\3\2\2")
+        buf.write("\2\13\t\3\2\2\2\13\f\3\2\2\2\f\3\3\2\2\2\r\16\5\6\4\2")
+        buf.write("\16\17\7\20\2\2\17\22\3\2\2\2\20\22\7\20\2\2\21\r\3\2")
+        buf.write("\2\2\21\20\3\2\2\2\22\5\3\2\2\2\23\24\7\t\2\2\24E\5\6")
+        buf.write("\4\2\25\26\7\n\2\2\26E\5\6\4\2\27\30\7\13\2\2\30\31\7")
+        buf.write("\3\2\2\31\32\7\b\2\2\32\33\7\4\2\2\33E\5\6\4\2\34\35\7")
+        buf.write("\13\2\2\35\36\7\3\2\2\36\37\7\b\2\2\37 \7\5\2\2 !\7\b")
+        buf.write("\2\2!\"\7\4\2\2\"E\5\6\4\2#$\7\f\2\2$%\7\3\2\2%&\7\b\2")
+        buf.write("\2&\'\7\4\2\2\'E\5\6\4\2()\7\f\2\2)*\7\3\2\2*+\7\b\2\2")
+        buf.write("+,\7\5\2\2,-\7\b\2\2-.\7\4\2\2.E\5\6\4\2/\60\7\13\2\2")
+        buf.write("\60\61\7\3\2\2\61\62\7\f\2\2\62\63\7\3\2\2\63\64\7\b\2")
+        buf.write("\2\64\65\7\5\2\2\65\66\7\b\2\2\66\67\7\4\2\2\678\7\6\2")
+        buf.write("\289\7\b\2\29:\7\4\2\2:E\5\6\4\2;<\7\r\2\2<=\7\3\2\2=")
+        buf.write(">\5\6\4\2>?\7\16\2\2?@\7\b\2\2@A\7\4\2\2AB\5\6\4\2BE\3")
+        buf.write("\2\2\2CE\7\7\2\2D\23\3\2\2\2D\25\3\2\2\2D\27\3\2\2\2D")
+        buf.write("\34\3\2\2\2D#\3\2\2\2D(\3\2\2\2D/\3\2\2\2D;\3\2\2\2DC")
+        buf.write("\3\2\2\2E\7\3\2\2\2\5\13\21D")
         return buf.getvalue()
 
 
@@ -48,11 +49,13 @@ class gramaticaParser ( Parser ):
     sharedContextCache = PredictionContextCache()
 
     literalNames = [ "<INVALID>", "'('", "')'", "','", "'+'", "';'", "<INVALID>", 
-                     "'encender'", "'apagar'", "'rotar'", "'mover'", "'repetir'" ]
+                     "'encender'", "'apagar'", "'rotar'", "'mover'", "'repetir'", 
+                     "'*'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "<INVALID>", "<INVALID>", "NUMBER", "ENCENDER", "APAGAR", 
-                      "ROTAR", "MOVER", "REPETIR", "WS", "NEWLINE" ]
+                      "ROTAR", "MOVER", "REPETIR", "MULTIPLICAR", "WS", 
+                      "NEWLINE" ]
 
     RULE_prog = 0
     RULE_iniciar = 1
@@ -72,8 +75,9 @@ class gramaticaParser ( Parser ):
     ROTAR=9
     MOVER=10
     REPETIR=11
-    WS=12
-    NEWLINE=13
+    MULTIPLICAR=12
+    WS=13
+    NEWLINE=14
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -426,6 +430,10 @@ class gramaticaParser ( Parser ):
             else:
                 return self.getTypedRuleContext(gramaticaParser.StatContext,i)
 
+        def MULTIPLICAR(self):
+            return self.getToken(gramaticaParser.MULTIPLICAR, 0)
+        def NUMBER(self):
+            return self.getToken(gramaticaParser.NUMBER, 0)
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterRep" ):
@@ -534,7 +542,7 @@ class gramaticaParser ( Parser ):
         localctx = gramaticaParser.StatContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_stat)
         try:
-            self.state = 64
+            self.state = 66
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
             if la_ == 1:
@@ -662,15 +670,19 @@ class gramaticaParser ( Parser ):
                 self.state = 59
                 self.stat()
                 self.state = 60
-                self.match(gramaticaParser.T__1)
+                self.match(gramaticaParser.MULTIPLICAR)
                 self.state = 61
+                self.match(gramaticaParser.NUMBER)
+                self.state = 62
+                self.match(gramaticaParser.T__1)
+                self.state = 63
                 self.stat()
                 pass
 
             elif la_ == 9:
                 localctx = gramaticaParser.FinContext(self, localctx)
                 self.enterOuterAlt(localctx, 9)
-                self.state = 63
+                self.state = 65
                 self.match(gramaticaParser.T__4)
                 pass
 

@@ -95,8 +95,13 @@ class gramaticaVisitor(ParseTreeVisitor):
         
     # Visit a parse tree produced by gramaticaParser#Rep.
     def visitRep(self, ctx:gramaticaParser.RepContext):
-        print("aaaaaaaaaaaaaaaa")
-
+        num = int(ctx.NUMBER().getText())
+        stat = int(ctx.NUMBER().getText())
+        print(num)
+        print(stat)
+        #right = int(stat(ctx.expr(1)))
+        #if ctx.op.type == gramaticaParser.MULTIPLICAR:
+            #return right * num
         return self.visitChildren(ctx)
 
 
