@@ -39,7 +39,7 @@ class gramaticaVisitor(ParseTreeVisitor):
     # Visit a parse tree produced by gramaticaParser#Off.
     def visitOff(self, ctx:gramaticaParser.OffContext):
         turtle.up()
-        #turtle.done()
+        turtle.done()
 
         return self.visitChildren(ctx)
 
@@ -54,8 +54,8 @@ class gramaticaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by gramaticaParser#Rot.
     def visitRot(self, ctx:gramaticaParser.RotContext):
-        right = int(self.visit(ctx.stat(ctx)))
-        turtle.rigth(right)
+        angle = int(ctx.NUMBER().getText())
+        turtle.right(angle)
 
 
         return self.visitChildren(ctx)

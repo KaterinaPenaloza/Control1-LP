@@ -1,3 +1,3 @@
 encender
-rotar(90)
+rotar(190)
 apagar;
