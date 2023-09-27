@@ -98,6 +98,15 @@ class gramaticaListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by gramaticaParser#Rep.
+    def enterRep(self, ctx:gramaticaParser.RepContext):
+        pass
+
+    # Exit a parse tree produced by gramaticaParser#Rep.
+    def exitRep(self, ctx:gramaticaParser.RepContext):
+        pass
+
+
     # Enter a parse tree produced by gramaticaParser#fin.
     def enterFin(self, ctx:gramaticaParser.FinContext):
         pass

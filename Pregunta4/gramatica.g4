@@ -11,6 +11,7 @@ stat    : ENCENDER stat # On
         | ROTAR '(' NUMBER ')' stat # Rot | ROTAR '(' NUMBER ',' NUMBER ')'  stat # Rot2
         | MOVER '(' NUMBER ')' stat # Mov | MOVER '(' NUMBER ',' NUMBER ')'  stat # Mov2
         | ROTAR '(' MOVER '(' NUMBER ',' NUMBER ')' '+' NUMBER ')' stat # Rot3
+        | REPETIR '(' stat ')' stat # Rep
         | ';' # fin
         ;
 
@@ -23,6 +24,8 @@ APAGAR : 'apagar';
 ROTAR : 'rotar';
 
 MOVER : 'mover';
+
+REPETIR : 'repetir';
 
 WS : [ \t\r\n]+->skip;
 
