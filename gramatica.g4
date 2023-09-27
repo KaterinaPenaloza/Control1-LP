@@ -9,6 +9,8 @@ iniciar : stat NEWLINE                # printStat
 stat    : ENCENDER stat # On
         | APAGAR  stat # Off
         | DIBUJAR stat # Dib
+        | ROTAR stat # ROTA
+        | MOVER stat # Mov  
         | ';' # fin
         ;
 
@@ -19,6 +21,10 @@ ENCENDER : 'encender';
 APAGAR : 'apagar';
 
 DIBUJAR : 'dibujar';
+
+ROTAR : 'rotar';
+
+MOVER : 'mover';
 
 WS : [ \t\r\n]+->skip;
 

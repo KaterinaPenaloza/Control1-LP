@@ -45,6 +45,14 @@ class gramaticaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by gramaticaParser#Mov.
+    def visitMov(self, ctx:gramaticaParser.MovContext):
+        return self.visitChildren(ctx)
+    
+    # Visit a parse tree produced by gramaticaParser#ROTA.
+    def visitROTA(self, ctx:gramaticaParser.ROTAContext):
+        return self.visitChildren(ctx)
+
     # Visit a parse tree produced by gramaticaParser#Dib.
     def visitDib(self, ctx:gramaticaParser.DibContext):
         
@@ -62,3 +70,5 @@ class gramaticaVisitor(ParseTreeVisitor):
 
 
 del gramaticaParser
+
+

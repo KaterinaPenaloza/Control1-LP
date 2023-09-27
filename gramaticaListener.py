@@ -62,6 +62,24 @@ class gramaticaListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by gramaticaParser#ROTA.
+    def enterROTA(self, ctx:gramaticaParser.ROTAContext):
+        pass
+
+    # Exit a parse tree produced by gramaticaParser#ROTA.
+    def exitROTA(self, ctx:gramaticaParser.ROTAContext):
+        pass
+
+
+    # Enter a parse tree produced by gramaticaParser#Mov.
+    def enterMov(self, ctx:gramaticaParser.MovContext):
+        pass
+
+    # Exit a parse tree produced by gramaticaParser#Mov.
+    def exitMov(self, ctx:gramaticaParser.MovContext):
+        pass
+
+
     # Enter a parse tree produced by gramaticaParser#fin.
     def enterFin(self, ctx:gramaticaParser.FinContext):
         pass
