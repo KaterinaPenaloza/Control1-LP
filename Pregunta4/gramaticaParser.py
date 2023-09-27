@@ -1,4 +1,4 @@
-# Generated from c:\\Users\\miap7\\Documents\\GitHub\\Control1-LP\\Pregunta2\\gramatica.g4 by ANTLR 4.9.2
+# Generated from c:\\Users\\miap7\\Documents\\GitHub\\Control1-LP\\Pregunta4\\gramatica.g4 by ANTLR 4.9.2
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -11,24 +11,28 @@ else:
 
 def serializedATN():
     with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\r")
-        buf.write("\63\4\2\t\2\4\3\t\3\4\4\t\4\3\2\6\2\n\n\2\r\2\16\2\13")
-        buf.write("\3\3\3\3\3\3\3\3\5\3\22\n\3\3\4\3\4\3\4\3\4\3\4\3\4\3")
+        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\16")
+        buf.write("?\4\2\t\2\4\3\t\3\4\4\t\4\3\2\6\2\n\n\2\r\2\16\2\13\3")
+        buf.write("\3\3\3\3\3\3\3\5\3\22\n\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4")
+        buf.write("\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3")
         buf.write("\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4")
-        buf.write("\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4\61\n\4\3\4\2")
-        buf.write("\2\5\2\4\6\2\2\2\67\2\t\3\2\2\2\4\21\3\2\2\2\6\60\3\2")
-        buf.write("\2\2\b\n\5\4\3\2\t\b\3\2\2\2\n\13\3\2\2\2\13\t\3\2\2\2")
-        buf.write("\13\f\3\2\2\2\f\3\3\2\2\2\r\16\5\6\4\2\16\17\7\r\2\2\17")
-        buf.write("\22\3\2\2\2\20\22\7\r\2\2\21\r\3\2\2\2\21\20\3\2\2\2\22")
-        buf.write("\5\3\2\2\2\23\24\7\b\2\2\24\61\5\6\4\2\25\26\7\t\2\2\26")
-        buf.write("\61\5\6\4\2\27\30\7\n\2\2\30\31\7\3\2\2\31\32\7\7\2\2")
-        buf.write("\32\33\7\4\2\2\33\61\5\6\4\2\34\35\7\n\2\2\35\36\7\3\2")
-        buf.write("\2\36\37\7\7\2\2\37 \7\5\2\2 !\7\7\2\2!\"\7\4\2\2\"\61")
-        buf.write("\5\6\4\2#$\7\13\2\2$%\7\3\2\2%&\7\7\2\2&\'\7\4\2\2\'\61")
-        buf.write("\5\6\4\2()\7\13\2\2)*\7\3\2\2*+\7\7\2\2+,\7\5\2\2,-\7")
-        buf.write("\7\2\2-.\7\4\2\2.\61\5\6\4\2/\61\7\6\2\2\60\23\3\2\2\2")
-        buf.write("\60\25\3\2\2\2\60\27\3\2\2\2\60\34\3\2\2\2\60#\3\2\2\2")
-        buf.write("\60(\3\2\2\2\60/\3\2\2\2\61\7\3\2\2\2\5\13\21\60")
+        buf.write("\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4=\n\4\3\4\2\2\5\2\4\6")
+        buf.write("\2\2\2D\2\t\3\2\2\2\4\21\3\2\2\2\6<\3\2\2\2\b\n\5\4\3")
+        buf.write("\2\t\b\3\2\2\2\n\13\3\2\2\2\13\t\3\2\2\2\13\f\3\2\2\2")
+        buf.write("\f\3\3\2\2\2\r\16\5\6\4\2\16\17\7\16\2\2\17\22\3\2\2\2")
+        buf.write("\20\22\7\16\2\2\21\r\3\2\2\2\21\20\3\2\2\2\22\5\3\2\2")
+        buf.write("\2\23\24\7\t\2\2\24=\5\6\4\2\25\26\7\n\2\2\26=\5\6\4\2")
+        buf.write("\27\30\7\13\2\2\30\31\7\3\2\2\31\32\7\b\2\2\32\33\7\4")
+        buf.write("\2\2\33=\5\6\4\2\34\35\7\13\2\2\35\36\7\3\2\2\36\37\7")
+        buf.write("\b\2\2\37 \7\5\2\2 !\7\b\2\2!\"\7\4\2\2\"=\5\6\4\2#$\7")
+        buf.write("\f\2\2$%\7\3\2\2%&\7\b\2\2&\'\7\4\2\2\'=\5\6\4\2()\7\f")
+        buf.write("\2\2)*\7\3\2\2*+\7\b\2\2+,\7\5\2\2,-\7\b\2\2-.\7\4\2\2")
+        buf.write(".=\5\6\4\2/\60\7\13\2\2\60\61\7\3\2\2\61\62\7\f\2\2\62")
+        buf.write("\63\7\3\2\2\63\64\7\b\2\2\64\65\7\5\2\2\65\66\7\b\2\2")
+        buf.write("\66\67\7\4\2\2\678\7\6\2\289\7\b\2\29:\7\4\2\2:=\5\6\4")
+        buf.write("\2;=\7\7\2\2<\23\3\2\2\2<\25\3\2\2\2<\27\3\2\2\2<\34\3")
+        buf.write("\2\2\2<#\3\2\2\2<(\3\2\2\2</\3\2\2\2<;\3\2\2\2=\7\3\2")
+        buf.write("\2\2\5\13\21<")
         return buf.getvalue()
 
 
@@ -42,12 +46,12 @@ class gramaticaParser ( Parser ):
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = [ "<INVALID>", "'('", "')'", "','", "';'", "<INVALID>", 
+    literalNames = [ "<INVALID>", "'('", "')'", "','", "'+'", "';'", "<INVALID>", 
                      "'encender'", "'apagar'", "'rotar'", "'mover'" ]
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
-                      "<INVALID>", "NUMBER", "ENCENDER", "APAGAR", "ROTAR", 
-                      "MOVER", "WS", "NEWLINE" ]
+                      "<INVALID>", "<INVALID>", "NUMBER", "ENCENDER", "APAGAR", 
+                      "ROTAR", "MOVER", "WS", "NEWLINE" ]
 
     RULE_prog = 0
     RULE_iniciar = 1
@@ -60,13 +64,14 @@ class gramaticaParser ( Parser ):
     T__1=2
     T__2=3
     T__3=4
-    NUMBER=5
-    ENCENDER=6
-    APAGAR=7
-    ROTAR=8
-    MOVER=9
-    WS=10
-    NEWLINE=11
+    T__4=5
+    NUMBER=6
+    ENCENDER=7
+    APAGAR=8
+    ROTAR=9
+    MOVER=10
+    WS=11
+    NEWLINE=12
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
@@ -127,7 +132,7 @@ class gramaticaParser ( Parser ):
                 self.state = 9 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << gramaticaParser.T__3) | (1 << gramaticaParser.ENCENDER) | (1 << gramaticaParser.APAGAR) | (1 << gramaticaParser.ROTAR) | (1 << gramaticaParser.MOVER) | (1 << gramaticaParser.NEWLINE))) != 0)):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << gramaticaParser.T__4) | (1 << gramaticaParser.ENCENDER) | (1 << gramaticaParser.APAGAR) | (1 << gramaticaParser.ROTAR) | (1 << gramaticaParser.MOVER) | (1 << gramaticaParser.NEWLINE))) != 0)):
                     break
 
         except RecognitionException as re:
@@ -216,7 +221,7 @@ class gramaticaParser ( Parser ):
             self.state = 15
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [gramaticaParser.T__3, gramaticaParser.ENCENDER, gramaticaParser.APAGAR, gramaticaParser.ROTAR, gramaticaParser.MOVER]:
+            if token in [gramaticaParser.T__4, gramaticaParser.ENCENDER, gramaticaParser.APAGAR, gramaticaParser.ROTAR, gramaticaParser.MOVER]:
                 localctx = gramaticaParser.PrintStatContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
                 self.state = 11
@@ -349,6 +354,40 @@ class gramaticaParser ( Parser ):
                 return visitor.visitChildren(self)
 
 
+    class Rot3Context(StatContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a gramaticaParser.StatContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def ROTAR(self):
+            return self.getToken(gramaticaParser.ROTAR, 0)
+        def MOVER(self):
+            return self.getToken(gramaticaParser.MOVER, 0)
+        def NUMBER(self, i:int=None):
+            if i is None:
+                return self.getTokens(gramaticaParser.NUMBER)
+            else:
+                return self.getToken(gramaticaParser.NUMBER, i)
+        def stat(self):
+            return self.getTypedRuleContext(gramaticaParser.StatContext,0)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterRot3" ):
+                listener.enterRot3(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitRot3" ):
+                listener.exitRot3(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRot3" ):
+                return visitor.visitRot3(self)
+            else:
+                return visitor.visitChildren(self)
+
+
     class FinContext(StatContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a gramaticaParser.StatContext
@@ -463,7 +502,7 @@ class gramaticaParser ( Parser ):
         localctx = gramaticaParser.StatContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_stat)
         try:
-            self.state = 46
+            self.state = 58
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
             if la_ == 1:
@@ -553,10 +592,39 @@ class gramaticaParser ( Parser ):
                 pass
 
             elif la_ == 7:
-                localctx = gramaticaParser.FinContext(self, localctx)
+                localctx = gramaticaParser.Rot3Context(self, localctx)
                 self.enterOuterAlt(localctx, 7)
                 self.state = 45
+                self.match(gramaticaParser.ROTAR)
+                self.state = 46
+                self.match(gramaticaParser.T__0)
+                self.state = 47
+                self.match(gramaticaParser.MOVER)
+                self.state = 48
+                self.match(gramaticaParser.T__0)
+                self.state = 49
+                self.match(gramaticaParser.NUMBER)
+                self.state = 50
+                self.match(gramaticaParser.T__2)
+                self.state = 51
+                self.match(gramaticaParser.NUMBER)
+                self.state = 52
+                self.match(gramaticaParser.T__1)
+                self.state = 53
                 self.match(gramaticaParser.T__3)
+                self.state = 54
+                self.match(gramaticaParser.NUMBER)
+                self.state = 55
+                self.match(gramaticaParser.T__1)
+                self.state = 56
+                self.stat()
+                pass
+
+            elif la_ == 8:
+                localctx = gramaticaParser.FinContext(self, localctx)
+                self.enterOuterAlt(localctx, 8)
+                self.state = 57
+                self.match(gramaticaParser.T__4)
                 pass
 
 

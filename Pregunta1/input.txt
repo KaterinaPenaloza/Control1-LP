@@ -1,3 +1,5 @@
 encender
-dibujar
+mover(50)
+apagar
+mover(70)
 apagar;

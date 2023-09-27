@@ -44,6 +44,37 @@ class gramaticaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by gramaticaParser#Rot.
+    def visitRot(self, ctx:gramaticaParser.RotContext):
+        angle = int(ctx.NUMBER().getText())
+        turtle.right(angle)
+
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by gramaticaParser#Rot2.
+    def visitRot2(self, ctx:gramaticaParser.Rot2Context):
+        angle = int(ctx.NUMBER(0).getText())
+        move = int(ctx.NUMBER(1).getText())
+        turtle.right(angle)
+        turtle.forward(move)
+
+        return self.visitChildren(ctx)
+    
+    # Visit a parse tree produced by gramaticaParser#Rot2.
+    def visitRot3(self, ctx:gramaticaParser.Rot2Context):
+        move = int(ctx.NUMBER(0).getText())
+        move1 = int(ctx.NUMBER(1).getText())
+        angle = int(ctx.NUMBER(2).getText())
+        
+        turtle.goto(move,move1)
+        #turtle.forward(move1)
+        turtle.right(angle)
+
+
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by gramaticaParser#Mov.
     def visitMov(self, ctx:gramaticaParser.MovContext):
         move = int(ctx.NUMBER().getText())

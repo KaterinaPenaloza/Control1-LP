@@ -1,4 +1,4 @@
-# Generated from c:\\Users\\miap7\\Documents\\GitHub\\Control1-LP\\Pregunta2\\gramatica.g4 by ANTLR 4.9.2
+# Generated from c:\\Users\\miap7\\Documents\\GitHub\\Control1-LP\\Pregunta4\\gramatica.g4 by ANTLR 4.9.2
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .gramaticaParser import gramaticaParser
@@ -86,6 +86,15 @@ class gramaticaListener(ParseTreeListener):
 
     # Exit a parse tree produced by gramaticaParser#Mov2.
     def exitMov2(self, ctx:gramaticaParser.Mov2Context):
+        pass
+
+
+    # Enter a parse tree produced by gramaticaParser#Rot3.
+    def enterRot3(self, ctx:gramaticaParser.Rot3Context):
+        pass
+
+    # Exit a parse tree produced by gramaticaParser#Rot3.
+    def exitRot3(self, ctx:gramaticaParser.Rot3Context):
         pass
 
 

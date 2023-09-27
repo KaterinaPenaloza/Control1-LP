@@ -1,0 +1,3 @@
+encender
+rotar(mover(10,0)+90)
+apagar;

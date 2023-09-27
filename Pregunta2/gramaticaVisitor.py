@@ -39,15 +39,7 @@ class gramaticaVisitor(ParseTreeVisitor):
     # Visit a parse tree produced by gramaticaParser#Off.
     def visitOff(self, ctx:gramaticaParser.OffContext):
         turtle.up()
-        turtle.done()
-
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by gramaticaParser#Dib.
-    def visitDib(self, ctx:gramaticaParser.DibContext):
-        turtle.goto()
-        #turtle.forward(100)
+        #turtle.done()
 
         return self.visitChildren(ctx)
 
@@ -57,19 +49,41 @@ class gramaticaVisitor(ParseTreeVisitor):
         angle = int(ctx.NUMBER().getText())
         turtle.right(angle)
 
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by gramaticaParser#Rot2.
+    # preguntar !!!!!!
+    def visitRot2(self, ctx:gramaticaParser.Rot2Context):
+        angle = int(ctx.NUMBER(0).getText())
+        move = int(ctx.NUMBER(1).getText())
+        turtle.right(angle)
+        turtle.forward(move)
 
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by gramaticaParser#Mov.
     def visitMov(self, ctx:gramaticaParser.MovContext):
-        turtle.forward()
+        move = int(ctx.NUMBER().getText())
+        turtle.forward(move)
+
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by gramaticaParser#Mov2.
+    def visitMov2(self, ctx:gramaticaParser.Mov2Context):
+        angle = int(ctx.NUMBER(0).getText())
+        move = int(ctx.NUMBER(1).getText())
+        turtle.right(angle)
+        turtle.forward(move)
 
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by gramaticaParser#fin.
     def visitFin(self, ctx:gramaticaParser.FinContext):
+        turtle.done()
         return self.visitChildren(ctx)
 
 

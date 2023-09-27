@@ -1,8 +1,5 @@
-# Generated from c:\\Users\\miap7\\Documents\\GitHub\\Control1-LP\\Pregunta2\\gramatica.g4 by ANTLR 4.9.2
+# Generated from c:\\Users\\miap7\\Documents\\GitHub\\Control1-LP\\Pregunta4\\gramatica.g4 by ANTLR 4.9.2
 from antlr4 import *
-import turtle
-from turtle import*
-
 if __name__ is not None and "." in __name__:
     from .gramaticaParser import gramaticaParser
 else:
@@ -29,42 +26,41 @@ class gramaticaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by gramaticaParser#On.
     def visitOn(self, ctx:gramaticaParser.OnContext):
-        turtle.showturtle()
-        turtle.shape("turtle")
-        turtle.down()
-
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by gramaticaParser#Off.
     def visitOff(self, ctx:gramaticaParser.OffContext):
-        turtle.up()
-        #turtle.done()
+        return self.visitChildren(ctx)
 
+
+    # Visit a parse tree produced by gramaticaParser#Rot.
+    def visitRot(self, ctx:gramaticaParser.RotContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by gramaticaParser#Rot2.
+    def visitRot2(self, ctx:gramaticaParser.Rot2Context):
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by gramaticaParser#Mov.
     def visitMov(self, ctx:gramaticaParser.MovContext):
-        move = int(ctx.NUMBER().getText())
-        turtle.forward(move)
-
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by gramaticaParser#Mov2.
     def visitMov2(self, ctx:gramaticaParser.Mov2Context):
-        angle = int(ctx.NUMBER(0).getText())
-        move = int(ctx.NUMBER(1).getText())
-        turtle.right(angle)
-        turtle.forward(move)
+        return self.visitChildren(ctx)
 
+
+    # Visit a parse tree produced by gramaticaParser#Rot3.
+    def visitRot3(self, ctx:gramaticaParser.Rot3Context):
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by gramaticaParser#fin.
     def visitFin(self, ctx:gramaticaParser.FinContext):
-        turtle.done()
         return self.visitChildren(ctx)
 
 
