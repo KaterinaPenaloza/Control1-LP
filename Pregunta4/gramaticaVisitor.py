@@ -40,7 +40,6 @@ class gramaticaVisitor(ParseTreeVisitor):
     # Visit a parse tree produced by gramaticaParser#Off.
     def visitOff(self, ctx:gramaticaParser.OffContext):
         turtle.up()
-        #turtle.done()
 
         return self.visitChildren(ctx)
 
@@ -55,10 +54,10 @@ class gramaticaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by gramaticaParser#Rot2.
     def visitRot2(self, ctx:gramaticaParser.Rot2Context):
-        angle = int(ctx.NUMBER(0).getText())
-        move = int(ctx.NUMBER(1).getText())
-        turtle.right(angle)
-        turtle.forward(move)
+        angle = int(ctx.NUMBER(0).getText()) # obtiene el angulo de rotacion
+        angle2 = int(ctx.NUMBER(1).getText()) # obtiene el segundo angulo de rotacion 
+        turtle.right(angle) # gira a la derecha para el angulo especificado 
+        turtle.right(angle2)  
 
         return self.visitChildren(ctx)
     
@@ -69,7 +68,6 @@ class gramaticaVisitor(ParseTreeVisitor):
         angle = int(ctx.NUMBER(2).getText())
         
         turtle.goto(move,move1)
-        #turtle.forward(move1)
         turtle.right(angle)
 
 
@@ -100,16 +98,14 @@ class gramaticaVisitor(ParseTreeVisitor):
         
         for _ in range(num-1):
             self.visit(stat)  # Visitar la sentencia la cantidad especificada de veces
-        #turtle.time.sleep(5)
         
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by gramaticaParser#fin.
     def visitFin(self, ctx:gramaticaParser.FinContext):
-        turtle.time.sleep(5)
         turtle.done()
-        turtle.time.sleep(10)
+        #turtle.time.sleep(10)
         return self.visitChildren(ctx)
 
 

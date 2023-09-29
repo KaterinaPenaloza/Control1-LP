@@ -16,8 +16,8 @@ if __name__ == '__main__':
     parser = gramaticaParser(token_stream)
     tree = parser.prog()
 
-    #lisp_tree_str = tree.toStringTree(recog=parser)
-    #print(lisp_tree_str)
+    lisp_tree_str = tree.toStringTree(recog=parser)
+    print(lisp_tree_str)
 
     visitor = gramaticaVisitor()
     visitor.visit(tree)
