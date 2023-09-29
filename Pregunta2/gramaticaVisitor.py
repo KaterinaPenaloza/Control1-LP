@@ -29,8 +29,8 @@ class gramaticaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by gramaticaParser#On.
     def visitOn(self, ctx:gramaticaParser.OnContext):
-        turtle.showturtle() # crear tablero 
-        turtle.shape("turtle") # se tiene forma de tortuga 
+        turtle.showturtle() # hacer visible la tortuga 
+        turtle.shape("turtle") # dar forma de tortuga
         turtle.down() # baja el lapiz para dibujar
 
         return self.visitChildren(ctx)
@@ -82,7 +82,7 @@ class gramaticaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by gramaticaParser#fin.
     def visitFin(self, ctx:gramaticaParser.FinContext):
-        turtle.done() # termina de dibujar
+        turtle.done() # # termina la ejecucion
         return self.visitChildren(ctx)
 
 
