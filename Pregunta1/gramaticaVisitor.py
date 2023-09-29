@@ -13,6 +13,7 @@ else:
 class gramaticaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by gramaticaParser#prog.
+    #El inicio del programa
     def visitProg(self, ctx:gramaticaParser.ProgContext):
         return self.visitChildren(ctx)
 
@@ -23,22 +24,26 @@ class gramaticaVisitor(ParseTreeVisitor):
 
 
     # Visit a parse tree produced by gramaticaParser#blank.
+    #Si el input está en blanco no hace nada
     def visitBlank(self, ctx:gramaticaParser.BlankContext):
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by gramaticaParser#On.
+    #Inicializa el puntero en forma de tortuga y "pone abajo el lapiz" para dibujar
     def visitOn(self, ctx:gramaticaParser.OnContext):
-        turtle.showturtle()
-        turtle.shape("turtle")
-        turtle.down()
+        turtle.showturtle() # crear tablero 
+        turtle.shape("turtle") # se tiene forma de tortuga 
+        turtle.down() # baja el lapiz para dibujar
 
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by gramaticaParser#Off.
+    #"Levanta el lapiz", de ese modo no dibuja.
     def visitOff(self, ctx:gramaticaParser.OffContext):
-        turtle.up()
+        turtle.up()  # levanta el lapiz para no dibujar aunque se mueva
+        #turtle.done()
 
         return self.visitChildren(ctx)
 
@@ -65,7 +70,7 @@ class gramaticaVisitor(ParseTreeVisitor):
     # Visit a parse tree produced by gramaticaParser#fin.
     #Termina la ejecución utilizando la funcion turtle.done()
     def visitFin(self, ctx:gramaticaParser.FinContext):
-        turtle.done() # termina la ejecucion
+        turtle.done()
         return self.visitChildren(ctx)
 
 
