@@ -46,8 +46,8 @@ class gramaticaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by gramaticaParser#Mov.
     def visitMov(self, ctx:gramaticaParser.MovContext):
-        move = int(ctx.NUMBER().getText())
-        turtle.forward(move)
+        move = int(ctx.NUMBER().getText()) # obtiene la distancia 
+        turtle.forward(move) # se mueve la distancia especificada
 
         return self.visitChildren(ctx)
 
