@@ -90,6 +90,7 @@ class gramaticaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by gramaticaParser#Mov2.
     # esta funcion permite obtener el angulo y distancia que debe dibujar la tortuga
+    # se desplaza hasta el punto indicado por el usuario
     def visitMov2(self, ctx:gramaticaParser.Mov2Context):
         angle = int(ctx.NUMBER(0).getText())
         move = int(ctx.NUMBER(1).getText())
