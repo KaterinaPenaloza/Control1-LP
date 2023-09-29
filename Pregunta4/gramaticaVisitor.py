@@ -76,13 +76,14 @@ class gramaticaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by gramaticaParser#Mov.
     def visitMov(self, ctx:gramaticaParser.MovContext):
-        move = int(ctx.NUMBER().getText())
-        turtle.forward(move)
+        move = int(ctx.NUMBER().getText()) # obtiene la distancia 
+        turtle.forward(move) # se mueve la distancia especificada
 
         return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by gramaticaParser#Mov2.
+    # esta funcion permite obtener el angulo y distancia que debe dibujar la tortuga
     def visitMov2(self, ctx:gramaticaParser.Mov2Context):
         angle = int(ctx.NUMBER(0).getText())
         move = int(ctx.NUMBER(1).getText())
@@ -104,7 +105,7 @@ class gramaticaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by gramaticaParser#fin.
     def visitFin(self, ctx:gramaticaParser.FinContext):
-        turtle.done()
+        turtle.done() # termina de dibujar
         return self.visitChildren(ctx)
 
 
