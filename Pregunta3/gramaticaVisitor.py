@@ -32,9 +32,9 @@ class gramaticaVisitor(ParseTreeVisitor):
     # Visit a parse tree produced by gramaticaParser#On.
     #Inicializa el puntero en forma de tortuga y "pone abajo el lapiz" para dibujar
     def visitOn(self, ctx:gramaticaParser.OnContext):
-        turtle.showturtle()
-        turtle.shape("turtle")
-        turtle.down()
+        turtle.showturtle() # crear tablero 
+        turtle.shape("turtle") # se tiene forma de tortuga 
+        turtle.down() # baja el lapiz para dibujar
 
         return self.visitChildren(ctx)
 
@@ -42,7 +42,7 @@ class gramaticaVisitor(ParseTreeVisitor):
     # Visit a parse tree produced by gramaticaParser#Off.
     #"Levanta el lapiz", de ese modo no dibuja.
     def visitOff(self, ctx:gramaticaParser.OffContext):
-        turtle.up()
+        turtle.up()  # levanta el lapiz para no dibujar aunque se mueva
         #turtle.done()
 
         return self.visitChildren(ctx)
@@ -52,8 +52,8 @@ class gramaticaVisitor(ParseTreeVisitor):
     # Rota el puntero a un cierto angulo dado por el usuario con la funcion turtle.right()
     # esto es en sentido horario (turtle.right)
     def visitRot(self, ctx:gramaticaParser.RotContext):
-        angle = int(ctx.NUMBER().getText())
-        turtle.right(angle)
+        angle = int(ctx.NUMBER().getText()) # obtiene el angulo de rotacion
+        turtle.right(angle) # gira a la derecha para el angulo especificado
 
         return self.visitChildren(ctx)
 
@@ -88,8 +88,8 @@ class gramaticaVisitor(ParseTreeVisitor):
     # Visit a parse tree produced by gramaticaParser#Mov.
     # El puntero se desplaza un numero dado por el usuario con la funcion turtle.forward()
     def visitMov(self, ctx:gramaticaParser.MovContext):
-        move = int(ctx.NUMBER().getText())
-        turtle.forward(move)
+        move = int(ctx.NUMBER().getText()) # obtiene la distancia 
+        turtle.forward(move) # se mueve la distancia especificada
 
         return self.visitChildren(ctx)
 
@@ -98,7 +98,7 @@ class gramaticaVisitor(ParseTreeVisitor):
     # El puntero se cambia orientación en dirección al punto y luego
     # se desplaza hasta el punto indicado por el usuario
     def visitMov2(self, ctx:gramaticaParser.Mov2Context):
-        angle = int(ctx.NUMBER(0).getText())
+        angle = int(ctx.NUMBER(0).getText()) 
         move = int(ctx.NUMBER(1).getText())
         turtle.right(angle)
         turtle.forward(move)
@@ -109,7 +109,7 @@ class gramaticaVisitor(ParseTreeVisitor):
     # Visit a parse tree produced by gramaticaParser#fin.
     #Termina la ejecución utilizando la funcion turtle.done()
     def visitFin(self, ctx:gramaticaParser.FinContext):
-        turtle.done()
+        turtle.done() # termina de dibujar
         return self.visitChildren(ctx)
 
 
