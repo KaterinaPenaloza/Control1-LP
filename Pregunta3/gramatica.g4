@@ -1,29 +1,31 @@
-grammar gramatica;
+grammar gramatica;      //se define el nombre de la gramatica que se utilizara para generar el analizador lexico y sintactico
 
-prog    :   iniciar+ ;
+prog    :   iniciar+ ;  //define la regla llamada "prog" e indica que "prog" repetira una o mas veces la regla "iniciar"
 
-iniciar : stat NEWLINE                # printStat
-        | NEWLINE                     # blank
+//Aqui se definen las reglas "iniciar" y "stat"
+//iniciar tiene 2 alternativas
+iniciar : stat NEWLINE   # printStat    //iniciar con una regla "stat" seguida de una "NEWLINE"
+        | NEWLINE        # blank        //indica que puede ser simplemente una "NEWLINE"
+        ;
+//stat tiene 6 alternativas
+stat    : ENCENDER stat # On    //indica que puede comenzar con la palabra "ENCENDER" y luego con la declaración "stat"
+        | APAGAR  stat # Off    //indica que puede comenzar con la palabra "APAGAR" y luego con la declaración "stat"
+        | ROTAR '(' NUMBER ')' stat # Rot | ROTAR '(' NUMBER ',' NUMBER ')'  stat # Rot2 //indica que puede comenzar con la palabra "ROTAR" seguida de un numero entre parentesis o dos numeros separados por una ","
+        | MOVER '(' NUMBER ')' stat # Mov | MOVER '(' NUMBER ',' NUMBER ')'  stat # Mov2 //indica que puede comenzar con la palabra "MOVER" seguida de un numero entre parentesis o dos numeros separados por una ","
+        | ROTAR '(' MOVER '(' NUMBER ',' NUMBER ')' '+' NUMBER ')' stat # Rot3 //indica que puede comenzar con la palabra "ROTAR" seguida de un numero entre parentesis o dos numeros separados por una ","
+        | ';' # fin //representa una declaración en blanco
         ;
 
-stat    : ENCENDER stat # On
-        | APAGAR  stat # Off
-        | ROTAR '(' NUMBER ')' stat # Rot | ROTAR '(' NUMBER ',' NUMBER ')'  stat # Rot2
-        | MOVER '(' NUMBER ')' stat # Mov | MOVER '(' NUMBER ',' NUMBER ')'  stat # Mov2
-        | ROTAR '(' MOVER '(' NUMBER ',' NUMBER ')' '+' NUMBER ')' stat # Rot3
-        | ';' # fin
-        ;
+NUMBER : ('-'? [0-9]+); //define la regla "NUMBER" que representa un numero, el cual puede iniciar opcionalmente con un numero negativo y luego tener opcionalmente 1 o mas digitos
 
-NUMBER : ('-'? [0-9]+);
+ENCENDER : 'encender';  //representa la palabra clave "ENCENDER"
 
-ENCENDER : 'encender';
+APAGAR : 'apagar';      //representa la palabra clave "APAGAR"
 
-APAGAR : 'apagar';
+ROTAR : 'rotar';        //representa la palabra clave "ROTAR"
 
-ROTAR : 'rotar';
+MOVER : 'mover';        //representa la palabra clave "MOVER"
 
-MOVER : 'mover';
+WS : [ \t\r\n]+->skip;   //se utiliza para reconocer y descartar espacios en blanco
 
-WS : [ \t\r\n]+->skip;
-
-NEWLINE:'\r'? '\n' ;     // return newlines to parser (is end-statement signal)
+NEWLINE:'\r'? '\n' ;       // se utiliza para reconocer lineas nuevas 
