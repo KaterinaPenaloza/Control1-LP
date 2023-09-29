@@ -62,12 +62,18 @@ class gramaticaVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
     
     # Visit a parse tree produced by gramaticaParser#Rot2.
+    # Se utiliza la base de la funcion mov2 que modifica la orientación del puntero y lo mueve hasta un punto dado
+    # por el usuario, luego cambia su orientacion como en la funcion Rot
     def visitRot3(self, ctx:gramaticaParser.Rot2Context):
+        #variables utilizadas para la funcion Mov2
         move = int(ctx.NUMBER(0).getText())
+        #variables utilizadas para la funcion Rot
         move1 = int(ctx.NUMBER(1).getText())
+        #variables utilizadas para la funcion Rot
         angle = int(ctx.NUMBER(2).getText())
-        
+        #funcion para mover
         turtle.goto(move,move1)
+        #funcion para rotar
         turtle.right(angle)
 
 
@@ -84,6 +90,7 @@ class gramaticaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by gramaticaParser#Mov2.
     # esta funcion permite obtener el angulo y distancia que debe dibujar la tortuga
+    # se desplaza hasta el punto indicado por el usuario
     def visitMov2(self, ctx:gramaticaParser.Mov2Context):
         angle = int(ctx.NUMBER(0).getText())
         move = int(ctx.NUMBER(1).getText())
@@ -105,7 +112,7 @@ class gramaticaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by gramaticaParser#fin.
     def visitFin(self, ctx:gramaticaParser.FinContext):
-        turtle.done() # termina de dibujar
+        turtle.done() # termina la ejecucion
         return self.visitChildren(ctx)
 
 
