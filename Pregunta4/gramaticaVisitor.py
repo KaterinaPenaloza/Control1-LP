@@ -111,6 +111,7 @@ class gramaticaVisitor(ParseTreeVisitor):
 
 
     # Visit a parse tree produced by gramaticaParser#fin.
+    #Termina la ejecución utilizando la funcion turtle.done()
     def visitFin(self, ctx:gramaticaParser.FinContext):
         turtle.done() # termina la ejecucion
         return self.visitChildren(ctx)
