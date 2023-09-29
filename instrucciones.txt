@@ -1,0 +1,36 @@
+Instalación:
+
+Para la instalación, se requiere:
+
+* Tener Python 3 instalado.
+* Tener Java y JDK instalados en su última versión compatible (se usó Java 8 y JDK 21 como ejemplo).
+* Instalar ANTLR4 a través de los siguientes comandos en la línea de comandos:
+	>pip install antlr4-tools
+	>pip install antlr4-python3-runtime==4.9.3
+
+* Configurar ANTLR4 en Visual Studio Code siguiendo estos pasos:
+	1. Ir a File > Preferences > Settings.
+	2. Buscar "Antlr4" y seleccionar "Edit in settings.json".
+	3. Asegurarse de que el archivo settings.json contenga lo siguiente:
+
+		"antlr4.generation": {
+    			"mode": "external",
+    			"language": "Python3",
+    			"listeners": true,
+    			"visitors": true
+		}
+
+Ejecución:
+
+Para ejecutar el programa, siga estos pasos:
+
+1. Abra la carpeta "Control_1_Penaloza_Perez_Perez" que contiene el programa en el editor de código fuente de su preferencia. Se sugiere utilizar Visual Studio Code, que es el editor utilizado para crear el proyecto.
+2. Desde la terminal, acceda a la carpeta correspondiente a la pregunta que desea visualizar. Por ejemplo:
+	> cd Control_1_Penaloza_Perez_Perez
+	> cd Pregunta1
+3. Una vez dentro de la carpeta de la pregunta, ejecute el archivo "dibujo.py" en Visual Studio Code desde la terminal utilizando el siguiente comando:
+	> python dibujar.py hello.txt
+
+NOTA: Para poder agregar sus propios comandos se debe modificar el archivo "input.txt" contenido en cada pregunta.
+
+Estas instrucciones le guiarán a través del proceso de ejecución del programa de manera efectiva.
