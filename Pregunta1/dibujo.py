@@ -21,7 +21,30 @@ if __name__ == '__main__':
 #Luego el arbol generado se pasa a string en formato lisp
     tree = parser.prog()
     lisp_tree_str = tree.toStringTree(recog=parser)
-    print(lisp_tree_str)
+    lisp_tree_list = list(lisp_tree_str)
+    for x in range (len(lisp_tree_list)):
+        nivel = 0
+        for i in lisp_tree_list:
+            if(i == "("):
+                indexi = lisp_tree_list.index(i)
+                lisp_tree_list[indexi] = "\n"
+
+                nivel = nivel + 1
+                for t in range(nivel):
+                    indexi = lisp_tree_list.index(i)+t
+                    lisp_tree_list[indexi+t] = "\t"
+                break
+
+        for j in reversed(lisp_tree_list):
+            if(j == ")"):
+                indexj = lisp_tree_list.index(j)
+                lisp_tree_list[indexj] = ""
+                nivel = nivel - 1 
+                break
+    
+
+    cadena_resultante = ''.join(lisp_tree_list)
+    print(cadena_resultante)
 #Se realiza la visita de los nodos para la ejecucion
     visitor = gramaticaVisitor()
     visitor.visit(tree)
