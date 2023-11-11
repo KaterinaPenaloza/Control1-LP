@@ -1,5 +1,5 @@
 encender
-mover(20)
+mover(90,10)
 mover(150,200)
-rotar(100,80)
+rotar(0,0)
 apagar;
