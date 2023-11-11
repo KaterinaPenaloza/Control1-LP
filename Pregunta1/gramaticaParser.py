@@ -1,4 +1,4 @@
-# Generated from c:\\Users\\miap7\\Documents\\GitHub\\Control1-LP\\Pregunta1\\gramatica.g4 by ANTLR 4.9.2
+# Generated from c://Users//miap7//Documents//GitHub//Control1-LP//Pregunta1//gramatica.g4 by ANTLR 4.13.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -8,25 +8,21 @@ if sys.version_info[1] > 5:
 else:
 	from typing.io import TextIO
 
-
 def serializedATN():
-    with StringIO() as buf:
-        buf.write("\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\f")
-        buf.write("\'\4\2\t\2\4\3\t\3\4\4\t\4\3\2\6\2\n\n\2\r\2\16\2\13\3")
-        buf.write("\3\3\3\3\3\3\3\5\3\22\n\3\3\4\3\4\3\4\3\4\3\4\3\4\3\4")
-        buf.write("\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\3\4\5\4%\n\4\3\4")
-        buf.write("\2\2\5\2\4\6\2\2\2)\2\t\3\2\2\2\4\21\3\2\2\2\6$\3\2\2")
-        buf.write("\2\b\n\5\4\3\2\t\b\3\2\2\2\n\13\3\2\2\2\13\t\3\2\2\2\13")
-        buf.write("\f\3\2\2\2\f\3\3\2\2\2\r\16\5\6\4\2\16\17\7\f\2\2\17\22")
-        buf.write("\3\2\2\2\20\22\7\f\2\2\21\r\3\2\2\2\21\20\3\2\2\2\22\5")
-        buf.write("\3\2\2\2\23\24\7\b\2\2\24%\5\6\4\2\25\26\7\t\2\2\26%\5")
-        buf.write("\6\4\2\27\30\7\n\2\2\30\31\7\3\2\2\31\32\7\7\2\2\32\33")
-        buf.write("\7\4\2\2\33%\5\6\4\2\34\35\7\n\2\2\35\36\7\3\2\2\36\37")
-        buf.write("\7\7\2\2\37 \7\5\2\2 !\7\7\2\2!\"\7\4\2\2\"%\5\6\4\2#")
-        buf.write("%\7\6\2\2$\23\3\2\2\2$\25\3\2\2\2$\27\3\2\2\2$\34\3\2")
-        buf.write("\2\2$#\3\2\2\2%\7\3\2\2\2\5\13\21$")
-        return buf.getvalue()
-
+    return [
+        4,1,10,37,2,0,7,0,2,1,7,1,2,2,7,2,1,0,4,0,8,8,0,11,0,12,0,9,1,1,
+        1,1,1,1,1,1,3,1,16,8,1,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,
+        2,1,2,1,2,1,2,1,2,1,2,1,2,3,2,35,8,2,1,2,0,0,3,0,2,4,0,0,39,0,7,
+        1,0,0,0,2,15,1,0,0,0,4,34,1,0,0,0,6,8,3,2,1,0,7,6,1,0,0,0,8,9,1,
+        0,0,0,9,7,1,0,0,0,9,10,1,0,0,0,10,1,1,0,0,0,11,12,3,4,2,0,12,13,
+        5,10,0,0,13,16,1,0,0,0,14,16,5,10,0,0,15,11,1,0,0,0,15,14,1,0,0,
+        0,16,3,1,0,0,0,17,18,5,6,0,0,18,35,3,4,2,0,19,20,5,7,0,0,20,35,3,
+        4,2,0,21,22,5,8,0,0,22,23,5,1,0,0,23,24,5,5,0,0,24,25,5,2,0,0,25,
+        35,3,4,2,0,26,27,5,8,0,0,27,28,5,1,0,0,28,29,5,5,0,0,29,30,5,3,0,
+        0,30,31,5,5,0,0,31,32,5,2,0,0,32,35,3,4,2,0,33,35,5,4,0,0,34,17,
+        1,0,0,0,34,19,1,0,0,0,34,21,1,0,0,0,34,26,1,0,0,0,34,33,1,0,0,0,
+        35,5,1,0,0,0,3,9,15,34
+    ]
 
 class gramaticaParser ( Parser ):
 
@@ -65,7 +61,7 @@ class gramaticaParser ( Parser ):
 
     def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
-        self.checkVersion("4.9.2")
+        self.checkVersion("4.13.1")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
@@ -122,7 +118,7 @@ class gramaticaParser ( Parser ):
                 self.state = 9 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << gramaticaParser.T__3) | (1 << gramaticaParser.ENCENDER) | (1 << gramaticaParser.APAGAR) | (1 << gramaticaParser.MOVER) | (1 << gramaticaParser.NEWLINE))) != 0)):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & 1488) != 0)):
                     break
 
         except RecognitionException as re:
@@ -211,7 +207,7 @@ class gramaticaParser ( Parser ):
             self.state = 15
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [gramaticaParser.T__3, gramaticaParser.ENCENDER, gramaticaParser.APAGAR, gramaticaParser.MOVER]:
+            if token in [4, 6, 7, 8]:
                 localctx = gramaticaParser.PrintStatContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
                 self.state = 11
@@ -219,7 +215,7 @@ class gramaticaParser ( Parser ):
                 self.state = 12
                 self.match(gramaticaParser.NEWLINE)
                 pass
-            elif token in [gramaticaParser.NEWLINE]:
+            elif token in [10]:
                 localctx = gramaticaParser.BlankContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
                 self.state = 14

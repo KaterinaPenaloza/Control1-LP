@@ -56,8 +56,10 @@ class gramaticaVisitor(ParseTreeVisitor):
     def visitRot2(self, ctx:gramaticaParser.Rot2Context):
         angle = int(ctx.NUMBER(0).getText()) # obtiene el angulo de rotacion
         angle2 = int(ctx.NUMBER(1).getText()) # obtiene el segundo angulo de rotacion 
-        turtle.right(angle) # gira a la derecha para el angulo especificado 
-        turtle.right(angle2)  
+        #turtle.right(angle) # gira a la derecha para el angulo especificado 
+        #turtle.right(angle2)
+        cordenada = turtle.towards(angle,angle2) # calula el angulo hacia la coordenada indicada 
+        turtle.setheading(cordenada) # orienta a la tortuga en esa direccion 
 
         return self.visitChildren(ctx)
     
@@ -92,10 +94,11 @@ class gramaticaVisitor(ParseTreeVisitor):
     # esta funcion permite obtener el angulo y distancia que debe dibujar la tortuga
     # se desplaza hasta el punto indicado por el usuario
     def visitMov2(self, ctx:gramaticaParser.Mov2Context):
-        angle = int(ctx.NUMBER(0).getText())
+        angle = int(ctx.NUMBER(0).getText()) 
         move = int(ctx.NUMBER(1).getText())
-        turtle.right(angle)
-        turtle.forward(move)
+        #turtle.right(angle)
+        #turtle.forward(move)
+        turtle.goto(angle,move)
 
         return self.visitChildren(ctx)
     
