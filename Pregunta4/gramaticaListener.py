@@ -116,14 +116,5 @@ class gramaticaListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by gramaticaParser#iterStat.
-    def enterIterStat(self, ctx:gramaticaParser.IterStatContext):
-        pass
-
-    # Exit a parse tree produced by gramaticaParser#iterStat.
-    def exitIterStat(self, ctx:gramaticaParser.IterStatContext):
-        pass
-
-
 
 del gramaticaParser
