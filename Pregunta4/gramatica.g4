@@ -14,14 +14,12 @@ stat    : ENCENDER stat # On  //indica que puede comenzar con la palabra "ENCEND
         | ROTAR '(' NUMBER ')' stat # Rot | ROTAR '(' NUMBER ',' NUMBER ')'  stat # Rot2  //indica que puede comenzar con la palabra "ROTAR" seguida de un numero entre parentesis o dos numeros separados por una ","
         | MOVER '(' NUMBER ')' stat # Mov | MOVER '(' NUMBER ',' NUMBER ')'  stat # Mov2   //indica que puede comenzar con la palabra "MOVER" seguida de un numero entre parentesis o dos numeros separados por una ","
         | ROTAR '(' MOVER '(' NUMBER ',' NUMBER ')' '+' NUMBER ')' stat # Rot3   //indica que puede comenzar con la palabra "ROTAR" seguida de un numero entre parentesis o dos numeros separados por una ","
-        | REPETIR NUMBER ':' iterStat # Rep
+        | REPETIR NUMBER ':' stat # Rep
         //| REPETIR '(' stat '*' NUMBER ')' stat # Rep   //indica que puede comenzar con la palabra "REPETIR" seguida de un numero entre parentesis o dos numeros separados por una ","
         //| REPETIR '(' stat MULTIPLICAR NUMBER')' stat # Rep
         | ';' # fin  //representa una declaración en blanco
         ;
-        
-iterStat: stat
-        ;
+
 
 NUMBER : ('-'? [0-9]+); //define la regla "NUMBER" que representa un numero, el cual puede iniciar opcionalmente con un numero negativo y luego tener opcionalmente 1 o mas digitos
 

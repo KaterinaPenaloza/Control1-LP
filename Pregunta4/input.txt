@@ -1,6 +1,4 @@
 encender
 repetir 3:
     rotar(90)
-    mover(20)
-mover(20)
-apagar;
+

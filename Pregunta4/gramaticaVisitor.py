@@ -105,7 +105,7 @@ class gramaticaVisitor(ParseTreeVisitor):
     # Visit a parse tree produced by gramaticaParser#Rep.    
     def visitRep(self, ctx:gramaticaParser.RepContext):
         num = int(ctx.NUMBER().getText())  # Obtener el número de repeticiones
-        stat = ctx.iterStat()  # Obtener el bloque de código a repetir
+        stat = ctx.stat()  # Obtener el bloque de código a repetir
         
         for _ in range(num):
             self.visit(stat)  # Visitar el bloque de código la cantidad especificada de veces
