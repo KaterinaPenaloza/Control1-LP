@@ -1,4 +1,4 @@
-# Generated from c://Users//miap7//Documents//GitHub//Control1-LP//Pregunta4//gramatica.g4 by ANTLR 4.13.1
+# Generated from c://Users//Kzwy//Desktop//Control1-LP//Pregunta4//gramatica.g4 by ANTLR 4.13.1
 from antlr4 import *
 if "." in __name__:
     from .gramaticaParser import gramaticaParser
@@ -98,6 +98,15 @@ class gramaticaListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by gramaticaParser#fin.
+    def enterFin(self, ctx:gramaticaParser.FinContext):
+        pass
+
+    # Exit a parse tree produced by gramaticaParser#fin.
+    def exitFin(self, ctx:gramaticaParser.FinContext):
+        pass
+
+
     # Enter a parse tree produced by gramaticaParser#Rep.
     def enterRep(self, ctx:gramaticaParser.RepContext):
         pass
@@ -107,12 +116,12 @@ class gramaticaListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by gramaticaParser#fin.
-    def enterFin(self, ctx:gramaticaParser.FinContext):
+    # Enter a parse tree produced by gramaticaParser#FR.
+    def enterFR(self, ctx:gramaticaParser.FRContext):
         pass
 
-    # Exit a parse tree produced by gramaticaParser#fin.
-    def exitFin(self, ctx:gramaticaParser.FinContext):
+    # Exit a parse tree produced by gramaticaParser#FR.
+    def exitFR(self, ctx:gramaticaParser.FRContext):
         pass
 
 
