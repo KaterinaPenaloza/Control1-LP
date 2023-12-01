@@ -1,7 +1,6 @@
 Instalación:
 
 Para la instalación, se requiere:
-
 * Tener Python 3 instalado.
 * Tener Java y JDK instalados en su última versión compatible (se usó Java 8 y JDK 21 como ejemplo).
 * Instalar ANTLR4 a través de los siguientes comandos en la línea de comandos:
@@ -21,16 +20,15 @@ Para la instalación, se requiere:
 		}
 
 Ejecución:
-
 Para ejecutar el programa, siga estos pasos:
 
-1. Abra la carpeta "Control_1_Penaloza_Perez_Perez" que contiene el programa en el editor de código fuente de su preferencia. Se sugiere utilizar Visual Studio Code, que es el editor utilizado para crear el proyecto.
+1. Abra la carpeta "Control_1_Penaloza_Perez_Perez" que contiene el programa en el editor de código fuente de su preferencia. 
+Se sugiere utilizar Visual Studio Code, que es el editor utilizado para crear el proyecto.
 2. Desde la terminal, acceda a la carpeta correspondiente a la pregunta que desea visualizar. Por ejemplo:
 	> cd Control_1_Penaloza_Perez_Perez
 	> cd Pregunta1
 3. Una vez dentro de la carpeta de la pregunta, ejecute el archivo "dibujo.py" en Visual Studio Code desde la terminal utilizando el siguiente comando:
-	> python dibujar.py hello.txt
+	> python dibujar.py input.txt
 
-NOTA: Para poder agregar sus propios comandos se debe modificar el archivo "input.txt" contenido en cada pregunta.
-
+4. Para poder agregar sus propios comandos o intrucciones que la tortuga debe seguir, se debe modificar el archivo "input.txt" contenido en cada pregunta.
 Estas instrucciones le guiarán a través del proceso de ejecución del programa de manera efectiva.

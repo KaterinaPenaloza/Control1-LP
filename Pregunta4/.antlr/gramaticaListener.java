@@ -149,15 +149,15 @@ public interface gramaticaListener extends ParseTreeListener {
 	 */
 	void exitRep(gramaticaParser.RepContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code FinRep}
-	 * labeled alternative in {@link gramaticaParser#finR}.
+	 * Enter a parse tree produced by the {@code FR}
+	 * labeled alternative in {@link gramaticaParser#finRep}.
 	 * @param ctx the parse tree
 	 */
-	void enterFinRep(gramaticaParser.FinRepContext ctx);
+	void enterFR(gramaticaParser.FRContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code FinRep}
-	 * labeled alternative in {@link gramaticaParser#finR}.
+	 * Exit a parse tree produced by the {@code FR}
+	 * labeled alternative in {@link gramaticaParser#finRep}.
 	 * @param ctx the parse tree
 	 */
-	void exitFinRep(gramaticaParser.FinRepContext ctx);
+	void exitFR(gramaticaParser.FRContext ctx);
 }

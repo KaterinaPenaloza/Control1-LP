@@ -9,11 +9,9 @@ else:
     from gramaticaParser import gramaticaParser
 
 # This class defines a complete generic visitor for a parse tree produced by gramaticaParser.
-
 class gramaticaVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by gramaticaParser#prog.
-    #El inicio del programa
     def visitProg(self, ctx:gramaticaParser.ProgContext):
         return self.visitChildren(ctx)
 
@@ -24,7 +22,6 @@ class gramaticaVisitor(ParseTreeVisitor):
 
 
     # Visit a parse tree produced by gramaticaParser#blank.
-    #Si el input está en blanco no hace nada
     def visitBlank(self, ctx:gramaticaParser.BlankContext):
         return self.visitChildren(ctx)
 
@@ -43,7 +40,6 @@ class gramaticaVisitor(ParseTreeVisitor):
     #"Levanta el lapiz", de ese modo no dibuja.
     def visitOff(self, ctx:gramaticaParser.OffContext):
         turtle.up()  # levanta el lapiz para no dibujar aunque se mueva
-        #turtle.done()
 
         return self.visitChildren(ctx)
 
@@ -65,7 +61,6 @@ class gramaticaVisitor(ParseTreeVisitor):
         move = int(ctx.NUMBER(1).getText())
         turtle.right(angle)
         turtle.forward(move)
-
         return self.visitChildren(ctx)
 
 
@@ -74,7 +69,6 @@ class gramaticaVisitor(ParseTreeVisitor):
     def visitFin(self, ctx:gramaticaParser.FinContext):
         turtle.done()
         return self.visitChildren(ctx)
-
-
+    
 
 del gramaticaParser

@@ -1,4 +1,4 @@
-# Generated from c://Users//miap7//Documents//GitHub//Control1-LP//Pregunta2//gramatica.g4 by ANTLR 4.13.1
+# Generated from c://Users//Kzwy//Desktop//Control1-LP//Pregunta2//gramatica.g4 by ANTLR 4.13.1
 from antlr4 import *
 if "." in __name__:
     from .gramaticaParser import gramaticaParser

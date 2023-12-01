@@ -88,7 +88,6 @@ class gramaticaVisitor(ParseTreeVisitor):
     def visitRep(self, ctx:gramaticaParser.RepContext):
         num = int(ctx.NUMBER().getText())  # Obtener el número de repeticiones
         stat = ctx.stat()  # Obtener el bloque de código a repetir
-        
         for _ in range(num):
             self.visit(stat)  # Visitar el bloque de código la cantidad especificada de veces
             print(_)
@@ -97,13 +96,15 @@ class gramaticaVisitor(ParseTreeVisitor):
 
     
     # Visit a parse tree produced by gramaticaParser#FR.
+    # Es un delimitador para terminar el bucle, pero no ha funcionado
+    # ya que si se pone algo luego no se hace el bucle.
     def visitFR(self, ctx:gramaticaParser.FRContext):
         print("Bucle finalizado")
         turtle.done()
         return None
     
     
-        # Visit a parse tree produced by gramaticaParser#fin.
+    # Visit a parse tree produced by gramaticaParser#fin.
     def visitFin(self, ctx:gramaticaParser.FinContext):
         turtle.done()
         return self.visitChildren(ctx)

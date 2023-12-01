@@ -160,13 +160,13 @@ public class gramaticaBaseListener implements gramaticaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFinRep(gramaticaParser.FinRepContext ctx) { }
+	@Override public void enterFR(gramaticaParser.FRContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitFinRep(gramaticaParser.FinRepContext ctx) { }
+	@Override public void exitFR(gramaticaParser.FRContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

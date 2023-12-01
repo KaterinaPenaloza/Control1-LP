@@ -1,6 +1,5 @@
 encender
-repetir 10: 
-    mover(20) 
+repetir 3: 
+    mover(50) 
     rotar(90)
 /
-

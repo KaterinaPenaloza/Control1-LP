@@ -1,4 +1,4 @@
-# Generated from c://Users//miap7//Documents//GitHub//Control1-LP//Pregunta2//gramatica.g4 by ANTLR 4.13.1
+# Generated from c://Users//Kzwy//Desktop//Control1-LP//Pregunta2//gramatica.g4 by ANTLR 4.13.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO

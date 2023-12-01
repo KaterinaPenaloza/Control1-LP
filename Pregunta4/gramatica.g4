@@ -16,10 +16,10 @@ stat    : ENCENDER (stat|repetir)                         # On  //indica que pue
         | ';' # fin  //representa una declaración en blanco
         ;
 
-repetir : REPETIR NUMBER ':' stat finRep    # Rep
+repetir : REPETIR NUMBER ':' stat finRep    # Rep //repetir una accion una cierta cantidad de veces.
         ;
 
-finRep  : '/' #FR; 
+finRep  : '/' #FR; //delimitador del bucle
 
 
 NUMBER : ('-'? [0-9]+); //define la regla "NUMBER" que representa un numero, el cual puede iniciar opcionalmente con un numero negativo y luego tener opcionalmente 1 o mas digitos
